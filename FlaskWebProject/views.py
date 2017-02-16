@@ -3,7 +3,7 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template
+from flask import render_template, request, url_for
 from FlaskWebProject import app
 
 @app.route('/')
@@ -13,13 +13,18 @@ def home():
     return render_template(
         'index.html',
         title='Home Page',
-        year=datetime.now().year,
     )
 	
-@app.route('/haha')
-def haha():
-	"""Renders the haha page"""
+@app.route('/add', methods=['POST'])
+def add():
+	"""Renders the addition sum page"""
+	a=request.form['int_a']
+	b=request.form['int_b']
+	c=a+b
 	return render_template(
-		'haha.html',
-		title='HAHA',
+		'add.html',
+		title='Addition',
+		a=a,
+		b=b,
+		sum=c,
 	)
