@@ -6,9 +6,15 @@
     <title>{{ title }} - My Flask Application</title>
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<script type=text/javascript>
+		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+	</script>
 	<script type=text/javascript>
 		$(function() {
-		  $('a#check').bind('click', function() {
+		  $('a#check').bind($SCRIPT_ROOT + '/click', function() {
 			$.getJSON({{ url_for('check') }} + '/check', {
 			  word: $('input[name="word"]').val()
 			}, function(data) {
@@ -18,9 +24,6 @@
 		  });
 		});
 	</script>
-</head>
-
-<body>
     <h1>{{ title }}</h1>
     <p> Spell Checker </p>
 	<div>
@@ -30,7 +33,7 @@
 		<!--<input type="submit" value="Check spelling"/>-->
 		<!--</form>-->
 			 <br /><br />
-			 <a href="javascript:void();" id="check">Check</a>
+			 <a href="#" id="check">Check</a>
 			 <br /><br />
 			 <span id="result"></span>
     </div>
