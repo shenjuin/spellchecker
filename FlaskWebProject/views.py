@@ -18,7 +18,6 @@ def home():
 def check():
 	"""Renders the addition sum page"""
 	word=request.form['word']
-	result=autocorrect(word)
 	return render_template(
 		'check.html',
 		title='Spell Check',
