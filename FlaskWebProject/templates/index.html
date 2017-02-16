@@ -11,7 +11,7 @@
     <h1>{{ title }}</h1>
     <p> Spell Checker </p>
 	<div>
-		<form method="post" action="{{ url_for('home') }}">
+		<form method="post" action="{{ url_for('check') }}">
 			<label for="word">Please enter a word</label>
 			<input type="text" name="word" /><br />
 			<input type="submit" value="Check spelling"/>
