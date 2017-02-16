@@ -11,13 +11,15 @@
     <h1>{{ title }}</h1>
     <p> Simple Addition </p>
 	<div>
-		<form method="post" action="{{ url_for('add') }}">
+		<form method="post" action="{{ url_for('home') }}">
 			<label for="int_a">Please enter an integer</label>
 			<input type="text" name="int_a" /><br />
 			<label for="int_b">Please enter another integer</label>
 			<input type="text" name="int_b" /><br />
 			<input type="submit" value="Sum up"/>
 		</form>
+		<br />
+		Sum = {{sum}}
     </div>
 </body>
 
