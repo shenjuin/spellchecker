@@ -14,8 +14,8 @@
 	</script>
 	<script type=text/javascript>
 		$(function() {
-		  $('a#check').bind($SCRIPT_ROOT + '/click', function() {
-			$.getJSON({{ url_for('check') }} + '/check', {
+		  $('a#check').bind('click', function() {
+			$.getJSON($SCRIPT_ROOT + '/check', {
 			  word: $('input[name="word"]').val()
 			}, function(data) {
 			  $("#result").text(data.result);
