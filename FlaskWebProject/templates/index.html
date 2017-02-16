@@ -9,7 +9,7 @@
 	<script type=text/javascript>
 		$(function() {
 		  $('a#check').bind('click', function() {
-			$.getJSON('/check', {
+			$.getJSON({{ url_for('check') }} + '/check', {
 			  word: $('input[name="word"]').val()
 			}, function(data) {
 			  $("#result").text(data.result);
