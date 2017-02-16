@@ -20,7 +20,7 @@ def add():
 	"""Renders the addition sum page"""
 	a=request.form['int_a']
 	b=request.form['int_b']
-	c=a+b
+	c=int(a)+int(b)
 	return render_template(
 		'add.html',
 		title='Addition',
