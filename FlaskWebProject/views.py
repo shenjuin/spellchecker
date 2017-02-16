@@ -18,11 +18,9 @@ def home():
 @app.route('/check')
 def check():
 	"""Renders the addition sum page"""
-	word = request.args.get('word', 0, type=string)
-	return jsonify(result = word)
-	#word=request.form['word']
-	#return render_template(
-	#	'check.html',
-	#	title='Spell Check',
-	#	word=word,
-	#)
+	word=request.form['word']
+	return render_template(
+		'check.html',
+		title='Spell Check',
+		word=word,
+	)

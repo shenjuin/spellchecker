@@ -5,37 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - My Flask Application</title>
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
-	<script type=text/javascript>
-		$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-	</script>
-	<script type=text/javascript>
-		$(function() {
-		  $('a#check').bind('click', function() {
-			$.getJSON($SCRIPT_ROOT + '/check', {
-			  word: $('input[name="word"]').val()
-			}, function(data) {
-			  $("#result").text(data.result);
-			});
-			return false;
-		  });
-		});
-	</script>
     <h1>{{ title }}</h1>
     <p> Spell Checker </p>
 	<div>
-		<!--<form method="post" action="{{ url_for('check') }}"> -->
+		<form method="post" action="{{ url_for('check') }}">
 			<label for="word">Please enter a word</label>
 			<input type="text" name="word" /><br />
-		<!--<input type="submit" value="Check spelling"/>-->
-		<!--</form>-->
-			 <br /><br />
-			 <a href="#" id="check">Check</a>
-			 <br /><br />
-			 <span id="result"></span>
+			<input type="submit" value="Check spelling"/>
+		</form>
+		<br />
+		Click <a href="{{ url_for('home') }}">here</a> to return to home
     </div>
 </body>
 
