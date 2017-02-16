@@ -7,7 +7,7 @@ from flask import render_template, request, url_for
 from FlaskWebProject import app
 
 @app.route('/')
-@app.route('/home', methods=['POST'])
+@app.route('/home')
 def home():
     """Renders the home page."""
 	a=request.form['int_a']
@@ -16,21 +16,14 @@ def home():
     return render_template(
         'index.html',
         title='Home Page',
-		a=a,
-		b=b,
-		sum=c,
     )
 	
-#@app.route('/add', methods=['POST'])
-#def add():
-#	"""Renders the addition sum page"""
-#	a=request.form['int_a']
-#	b=request.form['int_b']
-#	c=int(a)+int(b)
-#	return render_template(
-#		'add.html',
-#		title='Addition',
-#		a=a,
-#		b=b,
-#		sum=c,
-#	)
+@app.route('/check', methods=['POST'])
+def check():
+	"""Renders the addition sum page"""
+	word=request.form['word']
+	return render_template(
+		'check.html',
+		title='Spell Check',
+		word=word,
+	)
