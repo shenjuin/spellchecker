@@ -15,3 +15,10 @@ def home():
         title='Home Page',
         year=datetime.now().year,
     )
+	
+def haha():
+	"""Renders the haha page"""
+	return render_template(
+		'haha.html',
+		title='HAHA',
+	)
