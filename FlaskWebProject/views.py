@@ -16,10 +16,10 @@ def home():
 	
 @app.route('/check', methods=['POST'])
 def check():
-	"""Renders the addition sum page"""
+	"""Renders the spellcheck result page"""
 	word=request.form['word']
 	return render_template(
 		'check.html',
 		title='Spell Check',
-		word=result,
+		word=word,
 	)
