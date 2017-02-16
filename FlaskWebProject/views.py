@@ -16,6 +16,7 @@ def home():
         year=datetime.now().year,
     )
 	
+@app.route('/haha')
 def haha():
 	"""Renders the haha page"""
 	return render_template(
