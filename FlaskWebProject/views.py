@@ -10,9 +10,6 @@ from FlaskWebProject import app
 @app.route('/home')
 def home():
     """Renders the home page."""
-	a=request.form['int_a']
-	b=request.form['int_b']
-	c=int(a)+int(b)
     return render_template(
         'index.html',
         title='Home Page',
