@@ -15,7 +15,7 @@ def home():
         title='Home Page',
     )
 	
-@app.route('/check', , methods=['POST'])
+@app.route('/check', methods=['POST'])
 def check():
 	"""Renders the addition sum page"""
 	word=request.form['word']
