@@ -18,7 +18,7 @@ def home():
 def check():
 	"""Renders the spellcheck result page"""
 	word=request.form['word']
-	word=autocorrect(word)
+	#word=autocorrect(word)
 	return render_template(
 		'check.html',
 		title='Spell Check',
