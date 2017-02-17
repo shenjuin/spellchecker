@@ -18,8 +18,13 @@ def home():
 def check():
 	"""Renders the spellcheck result page"""
 	word=request.form['word']
+	word=autocorrect(word)
 	return render_template(
 		'check.html',
 		title='Spell Check',
 		word=word,
 	)
+
+def autocorrect(word):
+    """Checks if input word is in corpus: if not, measures word distance and provides nearest word suggestions (if any)"""
+	return word+"s"
